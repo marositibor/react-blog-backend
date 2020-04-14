@@ -17,7 +17,7 @@ app.get('/blog/:id', (req, res) =>{
 })
 
 app.get('/blog', (req, res) =>{
-    db.all("SELECT id,author,date,title,description from blogpost",(err,rows)=>{
+    db.all("SELECT * from blogpost",(err,rows)=>{
         setTimeout(()=>{res.json(rows)},5000)
     })
 })
