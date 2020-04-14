@@ -3,11 +3,11 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database(':memory:');
 
 const cors = require('cors')
-app.use(cors())
 
 const app = express()
 const port = 3050
 
+app.use(cors())
 app.get('/blog', (req, res) =>{
     db.all("SELECT * from blogpost",(err,rows)=>{
         setTimeout(()=>{res.json(rows)},5000)
