@@ -7,7 +7,7 @@ const port = 3050
 
 app.get('/blog', (req, res) =>{
     db.all("SELECT * from blogpost",(err,rows)=>{
-        setTimeout(()=>{res.send(rows)},5000)
+        setTimeout(()=>{res.json(rows)},5000)
     })
 })
 
